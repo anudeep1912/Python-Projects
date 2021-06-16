@@ -18,14 +18,27 @@ def computer_choice():
 
 
 def game_function(user_in, computer_in):
+    winning_rules = {
+        'Rock': {'Lizard': 'Rock crushes lizard', 'Scissors': 'Rock crushes scissors'},
+        'Paper': {'Spock': 'Paper disproves Spock', 'Rock': 'Paper covers rock'},
+        'Scissors': {'Lizard': 'Scissors beheads lizard', 'Paper': 'Scissors cuts paper'},
+        'Lizard': {'Spock': 'Lizard poisons Spock', 'Paper': 'Lizard eats paper'},
+        'Spock': {'Scissors': 'Spock destroys scissors', 'Rock': 'Spock vaporizes rock'}
+    }
+    print('you choose {} and computer choose {} \n'.format(user_in, computer_in))
+    if user_in == computer_in:
+        print('It is a Draw! Please try again.')
+    else:
+        try:
+            print('You Win! ' + winning_rules[user_in][computer_in])
+        except KeyError:
+            print('You Lose! ' + winning_rules[computer_in][user_in])
 
 
-
-if __name__ == '__main__':
-    while True:
-        user_input = user_choice()
-        computer_input = computer_choice()
-        game_function(user_input, computer_input)
-        replay = input('Do you wanna play Again (Yes - 1/No - 0): ')
-        if replay != '1':
-            break
+while True:
+    user_input = user_choice()
+    computer_input = computer_choice()
+    game_function(user_input, computer_input)
+    replay = input('Do you wanna play Again (Yes - 1/No - 0): ')
+    if replay != '1':
+        break
