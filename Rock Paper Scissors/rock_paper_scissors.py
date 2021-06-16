@@ -42,6 +42,7 @@ if __name__ == '__main__':
     while True:
         user_input = user_choice()
         computer_input = computer_choice()
+        print('hello')
         game_function(user_input, computer_input)
         replay = input('Do you wanna play Again (Yes - 1/No - 0): ')
         if replay != '1':
