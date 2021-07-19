@@ -45,7 +45,7 @@ def game():
             print("That place is already filled.\nMove to which place?")
             continue
 
-        # Now we will check if player X or O has won,for every move after 5 moves. 
+        # Now we will check if player X or O has won,for every move after 5 moves.
         if count >= 5:
             if theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ':  # across the top
                 printBoard(theBoard)
@@ -92,7 +92,6 @@ def game():
         if count == 9:
             print("\nGame Over.\n")
             print("It's a Tie!!")
-
         # Now we have to change the player after every move.
         if turn == 'X':
             turn = 'O'
